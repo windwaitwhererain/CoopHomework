@@ -29,7 +29,7 @@ class MixedNumber {
     }
 
     int isNegative(){//判断是否为负数，用于检查过程
-        if(interger < 0 || (interger == 0&& numerator < 0)){
+        if(interger < 0 || (interger == 0 && numerator < 0)){
             return 1;
         }
         return 0;
@@ -92,8 +92,7 @@ class MixedNumber {
         numeratorB = numB.numerator + numB.interger * numB.denominator;
         numeratorA = numeratorA * (numB.denominator / gcd(numA.denominator,numB.denominator));
         numeratorB = numeratorB * (numA.denominator / gcd(numA.denominator,numB.denominator));
-        if(numA.denominator>numB.denominator) numC.denominator = numA.denominator * gcd(numA.denominator,numB.denominator);
-        else numC.denominator = numB.denominator * gcd(numA.denominator,numB.denominator);
+        numC.denominator = numA.denominator * numB.denominator / gcd(numA.denominator,numB.denominator);
         numC.numerator = numeratorA + numeratorB;
         numC.simplify();
         return numC;
