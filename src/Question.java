@@ -16,7 +16,7 @@ public class Question {
         while(true){
             elements[t].testPrintNumber();
             System.out.print(" ");
-            switch (operator[t]){
+            switch (operator[t]%10){
                 case 0:
                     System.out.print("=");
                     break;
@@ -80,7 +80,7 @@ public class Question {
     }
     MixedNumber getAnswer(int t){
         result=new MixedNumber();
-        switch (operator[t]) {
+        switch (operator[t]%10) {
             case 1:
                 result = result.mixNumberAdd(elements[t], elements[t + 1]);
                 break;
@@ -101,8 +101,11 @@ public class Question {
         int t=0;
         while(true){
             outString.append(elements[t].getNumber());
+            if(t > 0 && operator[t-1]>10){//判断右括号
+                outString.append(")");
+            }
             outString.append(" ");
-            switch (operator[t]){
+            switch (operator[t]%10){
                 case 0:
                     outString.append("=");
                     break;
@@ -123,6 +126,9 @@ public class Question {
             if(operator[t] == 0){
                 outString.append("\n");
                 break;
+            }
+            else if(operator[t+1] > 10){
+                outString.append("(");
             }
             t++;
         }
