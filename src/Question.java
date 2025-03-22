@@ -64,6 +64,9 @@ public class Question {
             if(elements[maxOperator].isNegative()==1){//判断过程中是否出现负数
                 return null;
             }
+            if(operator[maxOperator]==4 && elements[1].interger>1){//判断除法时是否出现假分数
+                return null;
+            }
             operator[maxOperator]=0;
             elements[maxOperator+1].setValue(elements[maxOperator]);
             operator[maxOperator]=0;
