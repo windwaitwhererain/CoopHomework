@@ -31,7 +31,7 @@ public class Main {
         }
         if (n != 0) {
             if(r != 0){
-                QuestionGenerator generator = new QuestionGenerator(n, r);
+                QuestionGenerator generator = new QuestionGenerator(n, r-1);
                 generator.questionGenerate();
                 writeFile.writeExerciseFile(generator); // 生成题目和答案文件
             }

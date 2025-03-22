@@ -9,6 +9,7 @@ class MainTest {
         Main.main(args);
     }
     @Test
+    //测试单输入变量下的情况
     void Test02(){
         String[] args={"-n","10"};
         Main.main(args);
@@ -46,5 +47,17 @@ class MainTest {
             Main.main(args);
         });
     }
+    @Test
+    void Test09(){
+        String[] args={"-n","10","-r","10000"};
 
+        assertTimeout(Duration.ofSeconds(100),() -> {
+            Main.main(args);
+        });
+    }
+    @Test
+    void Test10(){
+        String[] args={"-e","Areyousure?","-a","I'm_not_a.txt","-n","10","-r","10"};
+        Main.main(args);
+    }
 }

@@ -53,7 +53,7 @@ class MixedNumber {
             n = gcd(numerator, denominator);
             numerator = numerator / n;
             denominator = denominator / n;
-            if(numerator >= denominator){
+            if(Math.abs(numerator) >= Math.abs(denominator)){
                 interger = numerator / denominator;
                 numerator = numerator % denominator;
             }
