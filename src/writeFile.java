@@ -10,6 +10,7 @@ public class writeFile {
             }
             out.close();
         } catch (IOException e) {
+            System.out.println("写入数据失败，请检查硬盘剩余是否充足及程序是否有足够权限");
         }
         try {
             BufferedWriter out = new BufferedWriter(new FileWriter(fileName[1]));
@@ -19,6 +20,7 @@ public class writeFile {
             }
             out.close();
         } catch (IOException e) {
+            System.out.println("写入数据失败，请检查硬盘剩余是否充足及程序是否有足够权限");
         }
     }
 }

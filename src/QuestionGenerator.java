@@ -29,7 +29,6 @@ public class QuestionGenerator {
                 }
                 //十分之一的概率生成括号
             }
-            question.testPrintQuestion();
             tmpQuestion.copyQuestion(question);
             try{
                 question.result.setValue(tmpQuestion.getAnswerCalc());
@@ -37,7 +36,6 @@ public class QuestionGenerator {
                 t1--;
                 continue;
             }
-            question.testPrintQuestion();
             for(t2=0;t2<questions.size();t2++){//查重逻辑如下：首先判断结果是否相等，其次检查各元素是否相等
                 if(question.result.isEqual(questions.get(t2).result)==0){
                     continue;
@@ -57,9 +55,6 @@ public class QuestionGenerator {
                 continue;
             }
             questions.add(question);
-        }
-        for(t1=0;t1<this.n;t1++){
-            questions.get(t1).testPrintQuestion();
         }
     }
 }

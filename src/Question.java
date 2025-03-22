@@ -11,7 +11,7 @@ public class Question {
         operator = new int[3];//规定0为=，1为+，2为-，3为*，4为/
         result = new MixedNumber();
     }
-    void testPrintQuestion(){
+    void testPrintQuestion(){//测试函数
         int t=0;
         while(true){
             elements[t].testPrintNumber();
