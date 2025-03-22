@@ -47,7 +47,7 @@ public class Question {
             operator[i]=Q.operator[i];
         }
     }
-    MixedNumber getAnswerCalc(){//递归计算答案
+    MixedNumber getAnswerCalc(){//计算答案
         int t;
         int maxOperator=0;
         for(t=0;t<operator.length;t++){//找到最先进行的运算

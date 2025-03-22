@@ -9,6 +9,7 @@ class MixedNumber {
         numerator=0;
         denominator=1;
     }
+
 //    MixedNumber(int numerator,int denominator){
 //        this.numerator=numerator;
 //        this.denominator=denominator;
@@ -22,12 +23,12 @@ class MixedNumber {
         this.simplify();
     }
 
-    int isEqual(MixedNumber num){
+    int isEqual(MixedNumber num){//判断是否相等，用于查重
         if(interger == num.interger && numerator == num.numerator && denominator == num.numerator)return 1;
         return 0;
     }
 
-    int isNegative(){
+    int isNegative(){//判断是否为负数，用于检查过程
         if(interger < 0 || (interger == 0&& numerator < 0)){
             return 1;
         }
@@ -40,7 +41,7 @@ class MixedNumber {
     }
 
     private void simplify(){//将各自情况下的带分数化简为标准模型
-        if(numerator == 0){
+        if(numerator == 0){//如果分子为0，则不必继续化简
             denominator = 1;
         }
         else {
@@ -64,21 +65,23 @@ class MixedNumber {
         }
     }
 
-    MixedNumber negation(){
+    MixedNumber negation(){//将数转换为负数，用于减法
         MixedNumber data=new MixedNumber();
         data.interger=-interger;
         data.numerator=-numerator;
         return data;
     }
 
-    void randomNumber(int r){
+    void randomNumber(int r){//随机生成数据
         Random random=new Random();
         interger = random.nextInt(r)+1;
+        r=5;
         numerator = random.nextInt(4*r)+1;
-        if(numerator-3*r>0){
-            numerator -= 3*r;
-            denominator = random.nextInt(r)+2;
+        if(numerator - 3*r > 0){
+            numerator = numerator - 3*r ;
+            denominator = random.nextInt(r) + numerator;
         }
+        else numerator = 0;
         simplify();
     }
 
