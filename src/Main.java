@@ -19,7 +19,7 @@ public class Main {
             }
         }
         if(n!=0){
-            QuestionGenerator generator=new QuestionGenerator(n-1,r);
+            QuestionGenerator generator=new QuestionGenerator(n,r-1);
             generator.questionGenerate();
             writeFile.writeExerciseFile(generator);
         }
