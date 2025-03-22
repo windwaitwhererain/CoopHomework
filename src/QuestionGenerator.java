@@ -6,6 +6,7 @@ import java.util.Random;
 public class QuestionGenerator {
     int n;//生成题目数量
     int r;//生成范围
+    List<Question> questions = new ArrayList<>();
     QuestionGenerator(int n,int r){
         this.n=n;
         this.r=r;
@@ -14,7 +15,6 @@ public class QuestionGenerator {
         int t1;
         Random random=new Random();
         Question tmpQuestion = new Question();
-        List<Question> questions = new ArrayList<>();
         for(t1=0;t1<this.n;t1++){
             Question question=new Question();
             question.elements[0].randomNumber(r);

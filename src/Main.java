@@ -21,6 +21,7 @@ public class Main {
         if(n!=0){
             QuestionGenerator generator=new QuestionGenerator(n,r);
             generator.questionGenerate();
+            writeFile.writeExerciseFile(generator);
         }
     }
 }

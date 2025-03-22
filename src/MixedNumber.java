@@ -85,15 +85,30 @@ class MixedNumber {
         numC.simplify();
         return numC;
     }
-    int[] getMixedNumber(){//获取带分数的值
-        int[] data = {interger,numerator,denominator};
-        return data;
-    }
     void testPrintNumber(){
         System.out.print(interger);
         if(numerator!=0){
             System.out.print("'"+numerator+"/"+denominator);
         }
+    }
+    String getNumber(){
+        StringBuilder outString = new StringBuilder();
+        if(interger == 0){
+            if(numerator==0){
+                outString.append("0");
+
+            }
+            else{
+                outString.append(numerator+"/"+denominator);
+            }
+        }
+        else{
+            outString.append(interger);
+            if(numerator != 0){
+                outString.append("'"+numerator+"/"+denominator);
+            }
+        }
+        return outString.toString();
     }
     int isNegative(){
         if(interger < 0 || (interger == 0&& numerator < 0)){

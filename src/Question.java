@@ -93,4 +93,39 @@ public class Question {
         }
         return result;
     }
+    String getdataString(){
+        StringBuilder outString = new StringBuilder();
+        int t=0;
+        while(true){
+            outString.append(elements[t].getNumber());
+            outString.append(" ");
+            switch (operator[t]){
+                case 0:
+                    outString.append("=");
+                    break;
+                case 1:
+                    outString.append("+");
+                    break;
+                case 2:
+                    outString.append("-");
+                    break;
+                case 3:
+                    outString.append("*");
+                    break;
+                case 4:
+                    outString.append("/");
+                    break;
+            }
+            outString.append(" ");
+            if(operator[t] == 0){
+                outString.append("\n");
+                break;
+            }
+            t++;
+        }
+        return outString.toString();
+    }
+    String getAnswerString(){
+        return result.getNumber();
+    }
 }
